@@ -25,6 +25,8 @@ function App() {
 
     return (
         <div className='app'>
+            {/* TODO: Update meta tags for better embed (include logo, better description, etc.) */}
+
             <video id="background" autoPlay muted loop>
                 <source src={background} type='video/mp4'></source>
             </video>
@@ -105,6 +107,7 @@ function App() {
                 }
                 {nav === 'contact' &&
                     <div className='contact'>
+                        {/* TODO: too much space between form items */}
                         <form ref={form} onSubmit={sendEmail}>
                             <div className='form-group form-item'>
                                 <input className='form-control' type='name' name='name' placeholder='Name'></input>
