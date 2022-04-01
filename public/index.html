@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" http-equiv="Content-Security-Policy" content="default-src 'self'; media-src 'self'; manifest-src 'self'; frame-src youtube.com www.youtube.com https://www.youtube.com;" />
+    <!-- unsafe-inline is the only way to get css working locally -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+        media-src 'self';
+        connect-src 'self' api.emailjs.com https://api.emailjs.com;
+        frame-src youtube.com www.youtube.com https://youtube.com https://www.youtube.com;"
+    />
+    <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
@@ -9,7 +20,7 @@
       name="description"
       content="100 Miles landing page."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.ico" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
