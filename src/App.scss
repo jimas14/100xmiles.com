@@ -45,6 +45,7 @@
 
             #shot {
                 width: 100%;
+                padding-bottom: 5%;
             }
 
             #spacer {
@@ -54,11 +55,12 @@
             #blurb {
                 margin-left: 2%;
                 margin-right: 2%;
+                font-size: 16pt;
             }
         }
 
         .contact {
-            width: 30%;
+            width: 20%;
             display: inline-block;
 
             .form-item {
@@ -94,7 +96,7 @@
     #btn {
         color: white;
         text-decoration: none;
-        font-size: 14pt;
+        font-size: 18pt;
     }
     
     #btn:hover {
@@ -110,14 +112,16 @@
             padding-bottom: 2%;
 
             #logo {
-                width: 100%;
+                width: 90%;
                 padding-left: 2%;
                 padding-right: 2%;
             }
         }
 
-        .nav {
+        .navigation {
             padding-bottom: 2%;
+            padding-left: 30%;  // hacky way of getting nav items on 1 column for mobile
+            padding-right: 30%; // hacky way of getting nav items on 1 column for mobile
         }
 
         .content {
@@ -128,6 +132,9 @@
             }
 
             .about {
+                width: 75%;
+                padding-top: 3%;
+
                 #blurb {
                     padding-top: 3%;
                 }

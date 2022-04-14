@@ -9,25 +9,27 @@ import { Youtube, Instagram, Spotify, Tiktok } from 'react-bootstrap-icons';
 function App() {
     const [nav, setNav] = useState('home');
 
+    // TODO: add success message
     const form = useRef();
     const sendEmail = (e) => {
         e.preventDefault();
+        // TODO: for some reason meta tag not respecting connect-src
         // TODO: add captcha
         // TODO: obfuscate these keys
-        console.log(form);
-      emailjs.sendForm('service_99yma6l', 'template_iwl2o39', form.current, 'yFrtZ0IowJdufkxJn')
-        .then((result) => {
-            console.log(result.text + ' - email sent');
-        }, (error) => {
-            console.log(error.text);
-        });
+        emailjs.sendForm('service_99yma6l', 'template_iwl2o39', form.current, 'yFrtZ0IowJdufkxJn')
+                .then((result) => {
+                    console.log(result.text + ' - email sent');
+                }, (error) => {
+                    console.log(error.text);
+                });
     };
 
     return (
+        // TODO: Separate header, nav, content, and footer to components
         <div className='app'>
             {/* TODO: Update meta tags for better embed (include logo, better description, etc.) */}
 
-            <video id="background" autoPlay muted loop>
+            <video id="background" autoPlay muted loop playsInline>
                 <source src={background} type='video/mp4'></source>
             </video>
 
@@ -80,29 +82,21 @@ function App() {
                 }
                 {nav === 'about' &&
                     <div className='about'>
-                        <div className='row'>
-                            <div className='col-md-5'>
-                                <img  
-                                    id='shot' 
-                                    src={shot} 
-                                    alt='Headshot of 100 Miles creators Kyle Brennen Lawless and Grace D’Onofrio'>
-                                </img>
-                            </div>
-                            <div id='spacer' className='col-md-1'></div>                            
-                            <div className='col-md-1'></div>
-                            <div className='col-md-5'>
-                                {/* TODO: make height static and responsive w page */}
-                                {/* TODO: center blurb vertically */}
-                                <p id='blurb'>
-                                        100 Miles is a multi-media based brand focusing specifically on Baltimore culture, 
-                                        featuring individuals talented in areas of music, fine art, cuisine, and more. 
-                                        Created by Kyle Brennen Lawless and Grace D'Onofrio in 2021, the duo combined 
-                                        their strengths in graphic design and video production to create a platform to 
-                                        highlight independent artists. The team has cultivated multiple video series 
-                                        to highlight individuals and their talents.
-                                </p>
-                            </div>
-                        </div>
+                        <img  
+                            id='shot' 
+                            src={shot} 
+                            alt='Headshot of 100 Miles creators Kyle Brennen Lawless and Grace D’Onofrio'>
+                        </img>
+                        {/* TODO: make height static and responsive w page */}
+                        {/* TODO: center blurb vertically */}
+                        <p id='blurb'>
+                                100 Miles is a multi-media based brand focusing specifically on Baltimore culture, 
+                                featuring individuals talented in areas of music, fine art, cuisine, and more. 
+                                Created by Kyle Brennen Lawless and Grace D'Onofrio in 2021, the duo combined 
+                                their strengths in graphic design and video production to create a platform to 
+                                highlight independent artists. The team has cultivated multiple video series 
+                                to highlight individuals and their talents.
+                        </p>
                     </div>
                 }
                 {nav === 'contact' &&
