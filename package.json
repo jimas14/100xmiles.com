@@ -19,10 +19,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "aws s3 sync build/ s3://static-site-100-miles-customresource-s3bucketroot-yw0hx82uviar"
+    "build": "react-scripts build",
+    "deploy": "react-scripts build && aws s3 sync build/ s3://static-site-100-miles-customresource-s3bucketroot-yw0hx82uviar && aws cloudfront create-invalidation --distribution-id E1YG2GTJLOGBZE  --paths /index.html"
   },
   "eslintConfig": {
     "extends": [
