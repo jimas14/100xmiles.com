@@ -1,6 +1,6 @@
 # Overview
 
-100xmiles.com uses native React/Bootstrap and is deployed as a SPA on CloudFront.
+100xmiles.com uses native React/Bootstrap and is deployed as a static site on CloudFront.
 
 ## Requirements
 
