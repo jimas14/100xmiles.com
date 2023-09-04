@@ -25,7 +25,3 @@
     * better formatting
     * screen adjust to resizing
     * make mobile have shop on same line, or stack buttons
-
-* readme
-    * automate deployment
-    * add deployment steps
