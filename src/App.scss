@@ -16,13 +16,19 @@
 
     .navigation {
         padding-bottom: 2%;
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+        }
     }
 
     .content {
         padding-bottom: 2%;
 
         .home {
-            width: 30%;
+            width: 40%;
             display: inline-block;
 
             .playlist {
@@ -40,16 +46,16 @@
         }
 
         .about {
-            width: 30%;
-            display: inline-block;
+            width: 40%;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
 
             #shot {
                 width: 100%;
                 padding-bottom: 5%;
-            }
-
-            #spacer {
-                border-right: 2px solid #fff;
             }
 
             #blurb {
@@ -64,7 +70,20 @@
             display: inline-block;
 
             .form-item {
-                padding-bottom: 3%;
+                padding-bottom: 2%;
+            }
+
+            .form-message {
+                margin-top: 10px;
+                font-size: 14pt;
+
+                &.success {
+                    color: #90ee90;
+                }
+
+                &.error {
+                    color: #ff6b6b;
+                }
             }
         }
     }
@@ -98,10 +117,15 @@
         text-decoration: none;
         font-size: 18pt;
     }
-    
+
     #btn:hover {
         color: #B994C5;
         text-decoration: underline;
+    }
+
+    .active {
+        color: #B994C5 !important;
+        text-decoration: underline !important;
     }
 }
 
@@ -120,8 +144,11 @@
 
         .navigation {
             padding-bottom: 2%;
-            padding-left: 30%;  // hacky way of getting nav items on 1 column for mobile
-            padding-right: 30%; // hacky way of getting nav items on 1 column for mobile
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
 
         .content {
@@ -132,8 +159,9 @@
             }
 
             .about {
-                width: 75%;
+                width: 90%;
                 padding-top: 3%;
+                min-height: auto;
 
                 #blurb {
                     padding-top: 3%;
@@ -141,7 +169,7 @@
             }
 
             .contact {
-                width: 60%;
+                width: 80%;
             }
         }
 
